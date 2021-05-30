@@ -1,8 +1,15 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<label for="">Server Name</label>
+<!-- event binding - passing input data and using it -->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p> {{ serverName }}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
 <!-- sting Interpolation -->
 <p>{{ allowNewServer }}</p>
 
 <!-- property binding -->
 <p [innerText]="allowNewServer"></p>
+
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
